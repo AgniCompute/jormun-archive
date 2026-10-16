@@ -1,0 +1,22 @@
+# Development Archive & Working Files
+_dev_archive/
+psf_frames/
+*.mp4
+*.pyc
+__pycache__/
+
+# OS System Files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Editor & IDE Directories
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Local Logs & Scratch
+*.log
+scratch/
+
