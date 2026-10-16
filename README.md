@@ -1,79 +1,79 @@
-# ARCHIVE 04 // JÖRMUN — Deep-Sea 2.5D Leviathan Experience
+# ARCHIVE 04: JÖRMUN
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![Performance: 160+ FPS](https://img.shields.io/badge/Performance-160%2B%20FPS-2EE6CA.svg)](#performance--optimization)
-[![Style: Studio VØR / PSF Inspired](https://img.shields.io/badge/Aesthetic-Editorial%20Dark%20Mode-04080F.svg)](#aesthetic--art-direction)
+I built this project because I wanted to explore what happens when you combine creative web design with lightweight engineering. A lot of modern websites that feature creature animations or 3D effects rely on heavy WebGL libraries. While those tools are great, they often come with massive bundle sizes, slow load times, and battery drain. 
 
-An interactive, high-performance web experience featuring **JÖRMUN**—an 84-meter abyssal dragon sea serpent navigating sunken megalithic ruins. Inspired by high-end editorial dark-mode aesthetics (Studio VØR, Pizza Samurai Frogs), this project showcases custom 2.5D spline conveyor kinematics, biological roar synchronization, interactive hadal telemetry, and Web Audio synthesizers rendered at 160+ FPS without WebGL bloat.
+For me, technology is most exciting when it feels accessible to anyone. I wanted to see if I could create a living deep sea leviathan experience on a standard 2D canvas that runs smoothly on almost any device. It taught me a lot about finding the right balance between ambitious visuals and practical performance.
 
----
+## Why I Built It This Way
 
-## ⚡ Live Highlights
+When you look at interactive web design today, there are usually two extremes. On one side, you have standard flat websites that load instantly but feel static. On the other side, you have full 3D interactive experiences that look incredible, but they make your laptop fan spin up immediately.
 
-- **2.5D Spline Conveyor Engine:** Seamless shingled scale locomotion gliding through 3D cubic Bezier curves in dual foreground and background arches.
-- **Harmonic Biological Roar State Machine:** Periodic or click-triggered roar cycle (anticipation inhale, fanged abyss discharge, cyan photophore flare, authoritative jaw snap).
-- **100% Canvas GPU Optimization:** Pre-baked 2.5D specular beveling and hardware-accelerated composition yielding **160+ FPS lock** at minimal memory overhead.
-- **The Trench Floor Dossier (-9,820M):** Cinematic camera dive transition to an editorial hadal archive featuring:
-  - Live animated Benthic Pulse Oscilloscope (SVG EKG with REST/SURGE modes).
-  - Interactive Anatomical Specimen Inspection Lightbox (Plates 01–03).
-  - 360° Acoustic Sonar Visualizer with contact tracking, frequency sweeps, and click ripples.
-  - Expedition Hydrophone Recordings with procedural Web Audio synthesis.
-- **Dedicated Acoustic Gating:** Soft, deep 220Hz hydrophone acoustics with dedicated on/off mute toggles.
+I feel like there is a sweet spot in the middle that people do not explore enough. 
 
----
+Can you make something look cinematic and dynamic without asking the user to download tens of megabytes of 3D assets? It really depends on how you approach the problem. Instead of loading an entire 3D model, I used 2.5D spline kinematics. The dragon is made of repeating modular scale segments that calculate their position and rotation along smooth Bezier curves in real time. 
 
-## 🛠️ Tech Stack & Architecture
+That approach allows me to keep the entire build lightweight while maintaining over 120 frames per second. Most importantly, it means someone on an older phone or laptop can still enjoy the motion without lag.
 
-- **Vanilla JavaScript (ES6+):** Pure custom physics, Bezier parameterization, and Web Audio API synthesizers.
-- **HTML5 Canvas 2D:** Optimized hardware-composited canvas pipeline.
-- **Tailwind CSS:** Precision layout, typography, and responsive containers.
-- **GSAP 3:** Cinematic camera timelines, depth descent tweening, and easing.
-- **Cinzel & JetBrains Mono:** Editorial luxury serif paired with technical HUD monospace typography.
+## What It Does
 
----
+- Continuous 2.5D Motion: The body coils infinitely through the typography using a continuous conveyor loop. Instead of an awkward jump when the loop resets, each scale segment smoothly fades behind the neck collar.
+- Living Biological Roar: The creature is not just a looping video or a static image. You can click anywhere to trigger a roar sequence, complete with an anticipation inhale, glowing cyan photophores, and a natural jaw snap.
+- Trench Floor Archive: Scrolling down takes you to an editorial hadal dossier at minus 9,820 meters. It includes an interactive specimen lightbox, a live acoustic sonar visualizer, and an oscilloscope tracking benthic pulses.
+- Procedural Audio: The hydrophone sounds are synthesized using the native Web Audio API, so there are no heavy audio files to stream. There is also a dedicated sound toggle right at the top so anyone who finds the low hum distracting can turn it off anytime.
 
-## 🚀 Quick Start / Local Hosting
+## What This Project Taught Me
 
-This project is a static web application requiring no build step or node package installations.
+Building this project taught me that great design is not just about showing off fancy effects. It is about how those effects make the user feel. 
 
-### 1. Clone the repository
+When you spend hours adjusting the curve of a spline or the timing of a jaw snap, you realize that small details matter. If the movement is even slightly too fast or rigid, the creature looks mechanical. When you slow it down and add a subtle swimming cadence, people suddenly perceive it as a living creature. 
+
+I am passionate about learning how to use code to spark curiosity. When someone opens a webpage and pauses for a second because something unexpected caught their attention, that is the kind of impact I want to create.
+
+## Tech Stack
+
+I kept the stack minimal on purpose:
+
+- Vanilla JavaScript (ES6+): Custom spline kinematics, physics calculations, and Web Audio synthesizers.
+- HTML5 Canvas 2D: Hardware accelerated rendering for the serpent body.
+- Tailwind CSS: Clean layout structure and responsive containers.
+- GSAP: Smooth camera tweens and depth transitions between sections.
+
+No complex build setups, no npm installs, and no external framework overhead.
+
+## How to Run It Locally
+
+If you want to run this project on your machine, it takes just a couple of steps.
+
+1. Clone this repository:
 ```bash
-git clone https://github.com/your-username/jormun-archive.git
+git clone https://github.com/AgniCompute/jormun-archive.git
 cd jormun-archive
 ```
 
-### 2. Run a local HTTP server
-Any local HTTP server will work:
-
+2. Start any local web server:
 ```bash
-# Python 3
+# Using Python
 python -m http.server 8080
 
-# Or Node.js npx
+# Or using Node
 npx serve -l 8080
 ```
 
-Open `http://localhost:8080/` in your browser.
+3. Open your browser and go to `http://localhost:8080/`.
 
----
+## Deploying to GitHub Pages
 
-## 🌐 Deploying to GitHub Pages
+If you fork this project or push it to your own GitHub account, you can host it for free:
 
-1. Push this repository to GitHub.
-2. Navigate to **Settings** > **Pages**.
-3. Under **Build and deployment** > **Branch**, select `main` and root `/`.
-4. Click **Save**. Your site will be live across the world in seconds!
+1. Go to your repository settings on GitHub.
+2. Click on the Pages tab on the left menu.
+3. Under Build and deployment, set the branch to main and the folder to root.
+4. Click Save, and GitHub will deploy your site in about a minute.
 
----
+## Motion Engineering Guide
 
-## 📖 Motion Engineering & Creator Guide
+I wrote a detailed technical breakdown in MOTION_ENGINEERING.md. It covers the cubic Bezier spline math, the tangent formulas, and how the modular conveyor loop works. If you want to use these motion techniques in your own art or interactive projects, feel free to read through it and copy the starter code.
 
-Want to learn how the 2.5D spline conveyor, continuous zero-pop loop, and biological head coupling were engineered?
-Check out the complete breakdown in [**MOTION_ENGINEERING.md**](MOTION_ENGINEERING.md).
+## License
 
----
-
-## 📄 License
-
-MIT License. Created for cinematic interactive web experiences and generative motion exploration.
-
+MIT License. You are free to use the code, experiment with it, and build your own ideas.
